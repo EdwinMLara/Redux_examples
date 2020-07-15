@@ -1,4 +1,8 @@
-import{FETCH_USERS_REQUETS,FETCH_USERS_SUCCESS,FETCH_USERS_FAILURE} from './userTypes'
+import{
+    FETCH_USERS_REQUETS,
+    FETCH_USERS_SUCCESS,
+    FETCH_USERS_FAILURE} from './userTypes'
+    
 import axios from 'axios'
 
 export const fetchUsersRequest = () => {
@@ -26,7 +30,7 @@ export const fetchUsers = () =>{
         dispatch(fetchUsersRequest())
         axios.get('https://jsonplaceholder.typicode.com/users')
          .then(response => {
-             const users = response.data
+            const users = response.data
             dispatch(fecthUsersSuccess(users))
          })
          .catch(error => {
